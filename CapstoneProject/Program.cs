@@ -81,9 +81,18 @@ namespace CapstoneProject
             Console.WriteLine($"{userName} walks up to the door");
             Console.WriteLine();
             Console.WriteLine("what do you do?");
+            Console.WriteLine("A) ");
+            Console.WriteLine("B) ");
+            Console.WriteLine("C) ");
+            Console.WriteLine("I) ");
+            Console.WriteLine("Q) ");
             menuChoice=Console.ReadLine().ToUpper();
             switch (menuChoice)
-            {   case
+            {
+                case "A":
+
+                    break;
+
 
                 default:
                     Console.WriteLine("please enter a valid menu option [A] [B] [C] [I] [Q]");
