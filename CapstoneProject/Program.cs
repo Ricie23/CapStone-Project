@@ -142,7 +142,7 @@ namespace CapstoneProject
             DisplayHeader("\t\t\tThe Drawer\n");
             Console.WriteLine();
             Console.WriteLine($"{userName} looks at the drawer.");
-            Console.WriteLine("there does not seem to be a handle to be abel to open it.");
+            Console.WriteLine("there does not seem to be a handle to be able to open it.");
             Console.WriteLine();
             Console.WriteLine("\tA) Try to open drawer.");
             Console.WriteLine("\tB) return to the center of the room");
@@ -186,7 +186,7 @@ namespace CapstoneProject
             DisplayHeader("\t\t\t Picture\n");
             Console.WriteLine();
             Console.WriteLine($"{userName} picks up the picture. it is a picture of a small cabin in the woods");
-            Console.WriteLine("the corner seems a off-color");
+            Console.WriteLine("the corner of the picture seems a off-color");
             Console.WriteLine();
             Console.WriteLine("\tA) Use flashlight on picture");
             Console.WriteLine("\tB) return to the center of the room");
@@ -226,7 +226,7 @@ namespace CapstoneProject
             string menuChoice;
             DisplayHeader("\t\t\tLeft Side of the Room\n");
             Console.WriteLine();
-            Console.WriteLine($"on the left side of the room, {userName} sees a small lockbox on an endtable.");
+            Console.WriteLine($"on the left side of the room, {userName} sees a small safe with a combination lock on an endtable.");
             Console.WriteLine();
             Console.WriteLine("\tA) try to open the safe");
             Console.WriteLine("\tB) return to the center of the room");
@@ -288,6 +288,7 @@ namespace CapstoneProject
                     {
                         Console.WriteLine("you did not enter the correct code");
                         DisplayContinuePrompt();
+                        LockBoxMenu(userName, drawerHandle, key, codePaper);
                     }
 
                     LeftSideMenu(userName, drawerHandle, key, codePaper);
@@ -434,7 +435,8 @@ namespace CapstoneProject
             DisplayHeader("\t\t\tCongratulations!\n\n");
 
             Console.WriteLine();
-            Console.WriteLine($"\t\t{userName} has escaped the room!!!");
+            Console.WriteLine($"\t\t{userName} walks through the door and suddenly");
+            Console.WriteLine(" wakes up in their own bed and realized it was all a dream......");
             Console.WriteLine();
             Console.WriteLine("\t\tNice Job!");
             Console.WriteLine();
