@@ -44,8 +44,8 @@ namespace CapstoneProject
         //First MENU
         static bool MainMenu(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
-            string menuChoice;
             bool runApp = true;
+            string menuChoice;
 
             DisplayHeader("\n\t\tMain Menu\n");
 
@@ -345,14 +345,14 @@ namespace CapstoneProject
         //door is locked
         static void DoorLocked(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
+            
             DisplayHeader("\t\t\t open the door\n");
             if (key.CanUnlockDoor == true)
             {
 
                 GameWon(userName);
-
-
-
+                
+                Environment.Exit(0);
 
             }
             else
@@ -361,7 +361,7 @@ namespace CapstoneProject
                 DisplayContinuePrompt();
                 ExamineDoorMenu(userName, drawerHandle, key, codePaper);
             }
-
+            
         }
 
         #endregion
@@ -429,17 +429,18 @@ namespace CapstoneProject
 
 
         //Win Screen    
-        static bool GameWon(string userName)
+        static void GameWon(string userName)
         {
-            bool runApp = false;
-            DisplayHeader("\t\t\tCongradulations!\n\n");
+            DisplayHeader("\t\t\tCongratulations!\n\n");
 
             Console.WriteLine();
-            Console.WriteLine($"{userName} has escaped the room!!!");
+            Console.WriteLine($"\t\t{userName} has escaped the room!!!");
             Console.WriteLine();
-            DisplayContinuePrompt();
-            return runApp;
-
+            Console.WriteLine("\t\tNice Job!");
+            Console.WriteLine();
+            Console.WriteLine("press the enter key to exit the program");
+            Console.ReadLine();
+         
         }
 
         //get user name
