@@ -39,9 +39,7 @@ namespace CapstoneProject
             ClosingScreen();
         }
 
-
-
-        //First MENU
+       //MAIN MENU
         static bool MainMenu(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
             bool runApp = true;
@@ -90,6 +88,7 @@ namespace CapstoneProject
         }
 
         #region RIGHTSIDE MENUS
+       
         //RightSideRoom
         static void RightSideMenu(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
@@ -136,6 +135,7 @@ namespace CapstoneProject
 
         }
 
+        //Drawer Menu
         static void DrawerMenu(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
             string menuChoice;
@@ -162,6 +162,7 @@ namespace CapstoneProject
                     {
                         Console.WriteLine("You do not have a handle to open the drawer");
                         DisplayContinuePrompt();
+                        RightSideMenu(userName, drawerHandle, key, codePaper);
                     }
                     break;
 
@@ -179,7 +180,7 @@ namespace CapstoneProject
             }
         }
 
-        //picture frame
+        //Picture Menu
         static void PictureMenu(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
             string menuChoice;
@@ -260,6 +261,7 @@ namespace CapstoneProject
 
 
         }
+       
         //LockBoxMenu
         static void LockBoxMenu(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
@@ -308,7 +310,6 @@ namespace CapstoneProject
             }
 
         }
-
         #endregion
 
         #region DOOR
@@ -346,13 +347,13 @@ namespace CapstoneProject
         //door is locked
         static void DoorLocked(string userName, Inventory drawerHandle, Inventory key, Inventory codePaper)
         {
-            
+
             DisplayHeader("\t\t\t open the door\n");
             if (key.CanUnlockDoor == true)
             {
 
                 GameWon(userName);
-                
+
                 Environment.Exit(0);
 
             }
@@ -362,9 +363,8 @@ namespace CapstoneProject
                 DisplayContinuePrompt();
                 ExamineDoorMenu(userName, drawerHandle, key, codePaper);
             }
-            
-        }
 
+        }
         #endregion
 
         #region INVENTORY
@@ -379,7 +379,7 @@ namespace CapstoneProject
 
         }
 
-        //add safecode to inventory
+        //add code to inventory
         static Inventory InitializeCodePaper()
         {
             Inventory CodePaper = new Inventory();
@@ -426,9 +426,6 @@ namespace CapstoneProject
 
 
         #region HELPERS
-
-
-
         //Win Screen    
         static void GameWon(string userName)
         {
@@ -442,7 +439,7 @@ namespace CapstoneProject
             Console.WriteLine();
             Console.WriteLine("press the enter key to exit the program");
             Console.ReadLine();
-         
+
         }
 
         //get user name

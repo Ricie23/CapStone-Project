@@ -29,7 +29,6 @@ namespace CapstoneProject
             set { _useonDrawer = value; }
         }
 
-
         public bool CanUnlockDoor
         {
             get { return _unlockDoor; }
@@ -41,6 +40,7 @@ namespace CapstoneProject
             get { return _canSeeBetter; }
             set { _canSeeBetter = value; }
         }
+
         public string Name
         {
             get { return _name; }
